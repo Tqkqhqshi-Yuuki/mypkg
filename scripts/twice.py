@@ -1,18 +1,39 @@
 #!/usr/bin/env python3
 import rospy
+import random
 from std_msgs.msg import Int32
 
 n = 0
 
 def cb(message):
     global n
-    n = message.data*2
+    n = message.data
 
-if^__name__ == '__main__':
-    rospy.init_node('twice')
-    sub = rospy.Subscriber('count_up', Int32, cb)
-    pub = rospy.Publisher('twice', Int32, queue_size=1)
-    rate = rospy.Rate(10)
-    while not rospy.is_shutdown():
-        pub.publish(n)
-        rate.sleep()
+rospy.init_node('twice')
+sub = rospy.Subscriber('count_up', Int32, cb)
+rate = rospy.Rate(10)
+
+g = ["Guten Morge!","Hallo"]
+i = ["Scheiße.(うんこ)", "Ich muss dich nicht unterrichten(君に教える必要はないね)", "イッヒ　フンバルト　デル　ウンコ(ドイツ語風)"]
+a = ["Alles Essen, das du hasst, ist mein Favorit.(君の嫌いな食べ物全てが僕の好物さ)", "Was bedeutet es, es zu hören?(それを聞いて何の意味があるの？)"]
+t = ["Tschü  ss(バイバイ)", "Wir sehen uns(またね)"]
+
+while not rospy.is_shutdown():
+    if n == 13:
+        n = random.choice(g)
+        print(f"re:{n}")
+
+    elif n == 20:
+        n = random.choice(i)
+        print(f"re:{n}")
+
+    elif n == 28:
+        n = random.choice(a)
+        print(f"re:{n}")
+
+    elif n == 16:
+        n = random.choice(t)
+        print(f"re:{n}")
+        break
+
+    rate.sleep()
