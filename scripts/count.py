@@ -2,7 +2,7 @@
 
 """
 BSD 3-Clause License
-Copyright (c) 2020,  and Ryuichi Ueda
+Copyright (c) 2021, Yuuki Takahashi and Ryuichi Ueda
 All rights reserved.
 """
 
