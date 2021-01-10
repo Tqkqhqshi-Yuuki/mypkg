@@ -5,7 +5,11 @@
 ## 動作環境  
 - OS:ubuntu 20.04.1 LTS  
 ## 導入方法  
-`https://github.com/Tqkqhqshi-Yuuki/mypkg.git`  
+以下のコマンドを上から順に行う。  
+`cd catkin_ws/src`  
+`git clone https://github.com/Tqkqhqshi-Yuuki/mypkg.git`  
+`cd .. `  
+`catkin_make`
 ## 実行方法  
 ①ubuntuを４つ立ち上げ、４つ共に`cd catkin_ws/src/mypkg/scripts`を行う。  
 ②１つ目で`roscore`を実行。  
